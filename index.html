@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Website</title>
+<title>Ads Coordinates</title>
 
 <style>
 * {
@@ -28,7 +28,10 @@ h1 {
   margin: 30px auto;
   display: grid;
   gap: 25px;
-  justify-items: center;
+}
+
+.ad-container {
+  width: 100%;
 }
 
 .ad-slot {
@@ -47,6 +50,16 @@ h1 {
   max-width: 100%;
 }
 
+.coordinates {
+  margin-top: 8px;
+  padding: 10px;
+  background: #222;
+  color: #00ff90;
+  border-radius: 6px;
+  text-align: center;
+  direction: ltr;
+  font-size: 14px;
+}
 </style>
 </head>
 
@@ -56,127 +69,96 @@ h1 {
 
 <main class="ads">
 
-  <!-- Ad 1 -->
-  <div class="ad-slot">
-    <script>
-      atOptions = {
-        'key': 'eb79e909af38d56a8377e8ae0933d87e',
-        'format': 'iframe',
-        'height': 50,
-        'width': 320,
-        'params': {}
-      };
-    </script>
-    <script src="https://bauval.org/22/eb79e909af38d56a8377e8ae0933d87e"></script>
-  </div>
+<script>
+const adCodes = [
+  ["eb79e909af38d56a8377e8ae0933d87e",
+   "https://bauval.org/22/eb79e909af38d56a8377e8ae0933d87e"],
 
-  <!-- Ad 2 -->
-  <div class="ad-slot">
-    <script>
-      atOptions = {
-        'key': 'ddf3ee682eaea870330f0a8efd4f44a2',
-        'format': 'iframe',
-        'height': 50,
-        'width': 320,
-        'params': {}
-      };
-    </script>
-    <script src="https://bancadeltempoidea.org/22/ddf3ee682eaea870330f0a8efd4f44a2"></script>
-  </div>
+  ["ddf3ee682eaea870330f0a8efd4f44a2",
+   "https://bancadeltempoidea.org/22/ddf3ee682eaea870330f0a8efd4f44a2"],
 
-  <!-- Ad 3 -->
-  <div class="ad-slot">
-    <script>
-      atOptions = {
-        'key': 'ec0926696ae0012d06e0feadc294546f',
-        'format': 'iframe',
-        'height': 50,
-        'width': 320,
-        'params': {}
-      };
-    </script>
-    <script src="https://bicea.org/22/ec0926696ae0012d06e0feadc294546f"></script>
-  </div>
+  ["ec0926696ae0012d06e0feadc294546f",
+   "https://bicea.org/22/ec0926696ae0012d06e0feadc294546f"],
 
-  <!-- Ad 4 -->
-  <div class="ad-slot">
-    <script>
-      atOptions = {
-        'key': '13d4d39c0a28eb735f359bd14015503b',
-        'format': 'iframe',
-        'height': 50,
-        'width': 320,
-        'params': {}
-      };
-    </script>
-    <script src="https://czernik.org/22/13d4d39c0a28eb735f359bd14015503b"></script>
-  </div>
+  ["13d4d39c0a28eb735f359bd14015503b",
+   "https://czernik.org/22/13d4d39c0a28eb735f359bd14015503b"],
 
-  <!-- Ad 5 -->
-  <div class="ad-slot">
-    <script>
-      atOptions = {
-        'key': '427fc31032dc1ccf0f00f0b614f1d131',
-        'format': 'iframe',
-        'height': 50,
-        'width': 320,
-        'params': {}
-      };
-    </script>
-    <script src="https://bauval.org/22/427fc31032dc1ccf0f00f0b614f1d131"></script>
-  </div>
+  ["427fc31032dc1ccf0f00f0b614f1d131",
+   "https://bauval.org/22/427fc31032dc1ccf0f00f0b614f1d131"],
 
-  <!-- Additional spaces -->
-  <div class="ad-slot"><script>
-  atOptions = {
-    'key' : 'eb79e909af38d56a8377e8ae0933d87e',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
+  ["eb79e909af38d56a8377e8ae0933d87e",
+   "https://bauval.org/22/eb79e909af38d56a8377e8ae0933d87e"],
+
+  ["ddf3ee682eaea870330f0a8efd4f44a2",
+   "https://bancadeltempoidea.org/22/ddf3ee682eaea870330f0a8efd4f44a2"],
+
+  ["ec0926696ae0012d06e0feadc294546f",
+   "https://bicea.org/22/ec0926696ae0012d06e0feadc294546f"],
+
+  ["13d4d39c0a28eb735f359bd14015503b",
+   "https://czernik.org/22/13d4d39c0a28eb735f359bd14015503b"],
+
+  ["427fc31032dc1ccf0f00f0b614f1d131",
+   "https://bauval.org/22/427fc31032dc1ccf0f00f0b614f1d131"]
+];
+
+adCodes.forEach((ad, index) => {
+  const container = document.createElement("div");
+  container.className = "ad-container";
+
+  const slot = document.createElement("div");
+  slot.className = "ad-slot";
+  slot.id = "ad-" + (index + 1);
+
+  const coordinate = document.createElement("div");
+  coordinate.className = "coordinates";
+  coordinate.id = "coord-" + (index + 1);
+
+  container.appendChild(slot);
+  container.appendChild(coordinate);
+  document.querySelector(".ads").appendChild(container);
+
+  const options = document.createElement("script");
+  options.textContent = `
+    var atOptions = {
+      'key': '${ad[0]}',
+      'format': 'iframe',
+      'height': 50,
+      'width': 320,
+      'params': {}
+    };
+  `;
+
+  const script = document.createElement("script");
+  script.src = ad[1];
+
+  slot.appendChild(options);
+  slot.appendChild(script);
+});
+
+function updateCoordinates() {
+  document.querySelectorAll(".ad-slot").forEach((ad, index) => {
+    const rect = ad.getBoundingClientRect();
+
+    const x = rect.left + rect.width / 2 + window.scrollX;
+    const y = rect.top + rect.height / 2 + window.scrollY;
+
+    document.getElementById("coord-" + (index + 1)).textContent =
+      "Ad " + (index + 1) +
+      " | X: " + Math.round(x) +
+      " | Y: " + Math.round(y);
+  });
+}
+
+window.addEventListener("load", () => {
+  setTimeout(updateCoordinates, 2000);
+});
+
+window.addEventListener("resize", updateCoordinates);
+window.addEventListener("scroll", updateCoordinates);
+
+setTimeout(updateCoordinates, 3000);
 </script>
-<script src="https://bauval.org/22/eb79e909af38d56a8377e8ae0933d87e"></script></div>
-  <div class="ad-slot"><script>
-  atOptions = {
-    'key' : 'ddf3ee682eaea870330f0a8efd4f44a2',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bancadeltempoidea.org/22/ddf3ee682eaea870330f0a8efd4f44a2"></script></div>
-  <div class="ad-slot"><script>
-  atOptions = {
-    'key' : 'ec0926696ae0012d06e0feadc294546f',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bicea.org/22/ec0926696ae0012d06e0feadc294546f"></script></div>
-  <div class="ad-slot"><script>
-  atOptions = {
-    'key' : '13d4d39c0a28eb735f359bd14015503b',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://czernik.org/22/13d4d39c0a28eb735f359bd14015503b"></script></div>
-  <div class="ad-slot"><script>
-  atOptions = {
-    'key' : '427fc31032dc1ccf0f00f0b614f1d131',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/427fc31032dc1ccf0f00f0b614f1d131"></script></div>
 
 </main>
 
