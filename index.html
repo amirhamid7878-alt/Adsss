@@ -1,156 +1,184 @@
+
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEON ADS 5000</title>
+<title>My Website</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background: #050510;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    padding: 40px 15px;
-    text-align: center;
-    background: linear-gradient(135deg,#09091d,#240c38);
-    border-bottom: 2px solid #00eaff;
-    box-shadow: 0 0 25px #00eaff;
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
-    color: #00f7ff;
-    font-size: 35px;
-    text-shadow: 0 0 15px #00eaff;
+  text-align: center;
+  color: #222;
 }
 
-header p {
-    color: #ff38e8;
-}
-
-.counter {
-    color: #00f7ff;
-    margin-top: 15px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
-    justify-content: center;
-    gap: 25px;
-    padding: 30px 10px;
-}
-
-.ad-box {
-    width: 300px;
-    height: 270px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #111126;
-    border: 1px solid #00eaff;
-    border-radius: 10px;
-    box-shadow: 0 0 12px #00eaff66;
-    overflow: hidden;
-    padding: 8px 0;
-}
-
-.ad-box:hover {
-    box-shadow: 0 0 20px #00eaff,
-                0 0 35px #ff00e6;
-}
-
-.ad-title {
-    color: #ff38e8;
-    text-align: center;
-    margin-bottom: 8px;
-    font-size: 12px;
+.ads {
+  max-width: 700px;
+  margin: 30px auto;
+  display: grid;
+  gap: 25px;
+  justify-items: center;
 }
 
 .ad-slot {
-    width: 300px;
-    height: 250px;
+  width: 100%;
+  min-height: 80px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #00eaff;
-    border-top: 1px solid #00eaff;
+.ad-slot iframe {
+  max-width: 100%;
 }
 
-@media(max-width:320px) {
-    .ad-box {
-        width: 100%;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>⚡ NEON ADS ⚡</h1>
-    <p>WELCOME TO THE NEON ADVERTISING WORLD</p>
-    <div class="counter">
-        TOTAL AD SLOTS: 5000
-    </div>
-</header>
+<h1>Welcome</h1>
 
-<main class="grid" id="ads"></main>
+<main class="ads">
 
-<footer>
-    © 2026 NEON ADS - ALL RIGHTS RESERVED
-</footer>
+  <!-- Ad 1 -->
+  <div class="ad-slot">
+    <script>
+      atOptions = {
+        'key': 'eb79e909af38d56a8377e8ae0933d87e',
+        'format': 'iframe',
+        'height': 50,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script src="https://bauval.org/22/eb79e909af38d56a8377e8ae0933d87e"></script>
+  </div>
 
-<script>
-const TOTAL_ADS = 5000;
-const ads = document.getElementById("ads");
+  <!-- Ad 2 -->
+  <div class="ad-slot">
+    <script>
+      atOptions = {
+        'key': 'ddf3ee682eaea870330f0a8efd4f44a2',
+        'format': 'iframe',
+        'height': 50,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script src="https://bancadeltempoidea.org/22/ddf3ee682eaea870330f0a8efd4f44a2"></script>
+  </div>
 
-for(let i = 1; i <= TOTAL_ADS; i++) {
+  <!-- Ad 3 -->
+  <div class="ad-slot">
+    <script>
+      atOptions = {
+        'key': 'ec0926696ae0012d06e0feadc294546f',
+        'format': 'iframe',
+        'height': 50,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script src="https://bicea.org/22/ec0926696ae0012d06e0feadc294546f"></script>
+  </div>
 
-    const box = document.createElement("section");
-    box.className = "ad-box";
+  <!-- Ad 4 -->
+  <div class="ad-slot">
+    <script>
+      atOptions = {
+        'key': '13d4d39c0a28eb735f359bd14015503b',
+        'format': 'iframe',
+        'height': 50,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script src="https://czernik.org/22/13d4d39c0a28eb735f359bd14015503b"></script>
+  </div>
 
-    const title = document.createElement("div");
-    title.className = "ad-title";
-    title.textContent = "ADVERTISEMENT #" + i;
+  <!-- Ad 5 -->
+  <div class="ad-slot">
+    <script>
+      atOptions = {
+        'key': '427fc31032dc1ccf0f00f0b614f1d131',
+        'format': 'iframe',
+        'height': 50,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script src="https://bauval.org/22/427fc31032dc1ccf0f00f0b614f1d131"></script>
+  </div>
 
-    const slot = document.createElement("div");
-    slot.className = "ad-slot";
-
-    const options = document.createElement("script");
-
-    options.textContent = `
-        atOptions = {
-            'key': '8e69981bc57d6e5de19a7ecc2bb6c5dd',
-            'format': 'iframe',
-            'height': 250,
-            'width': 300,
-            'params': {}
-        };
-    `;
-
-    const external = document.createElement("script");
-    external.src =
-    "https://bicea.org/22/8e69981bc57d6e5de19a7ecc2bb6c5dd";
-
-    slot.appendChild(options);
-    slot.appendChild(external);
-
-    box.appendChild(title);
-    box.appendChild(slot);
-
-    ads.appendChild(box);
-}
+  <!-- Additional spaces -->
+  <div class="ad-slot"><script>
+  atOptions = {
+    'key' : 'eb79e909af38d56a8377e8ae0933d87e',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
 </script>
+<script src="https://bauval.org/22/eb79e909af38d56a8377e8ae0933d87e"></script></div>
+  <div class="ad-slot"><script>
+  atOptions = {
+    'key' : 'ddf3ee682eaea870330f0a8efd4f44a2',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://bancadeltempoidea.org/22/ddf3ee682eaea870330f0a8efd4f44a2"></script></div>
+  <div class="ad-slot"><script>
+  atOptions = {
+    'key' : 'ec0926696ae0012d06e0feadc294546f',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://bicea.org/22/ec0926696ae0012d06e0feadc294546f"></script></div>
+  <div class="ad-slot"><script>
+  atOptions = {
+    'key' : '13d4d39c0a28eb735f359bd14015503b',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://czernik.org/22/13d4d39c0a28eb735f359bd14015503b"></script></div>
+  <div class="ad-slot"><script>
+  atOptions = {
+    'key' : '427fc31032dc1ccf0f00f0b614f1d131',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/427fc31032dc1ccf0f00f0b614f1d131"></script></div>
+
+</main>
 
 </body>
 </html>
